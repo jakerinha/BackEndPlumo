@@ -1,0 +1,21 @@
+//Teste de Requisicoes REST - Medicoes
+
+@baseURL = http://localhost:4000
+
+###
+//GET - Lista todas as medicoes
+GET {{baseURL}}/medicoes
+Content-Type: application/json
+
+###
+//POST - Inclui um novo registro de medida
+POST {{baseURL}}/medicoes
+Content-Type: application/json
+
+{
+    "medidas.medidaX":"90",
+    "medidas.medidaY":"0",
+    "dataMedicao":"26/05/2021",
+    "nomeCliente":"Zezinho",
+    "localMedida":"Quina do Quarto 3"
+}
