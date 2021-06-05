@@ -2,6 +2,8 @@ const express = require('express')
 
 require('dotenv').config() //Realiza o carregamento das variaveis de ambiente
 
+const rotaMedicoes = require('./routes/Medicoes')
+
 const InicializaMongoServer = require('./config/db')
 InicializaMongoServer()
 
@@ -19,6 +21,10 @@ app.get('/', (req, res) => {
         versao: '1.0.0'
     })
 })
+
+//Rota para mediçoes
+
+app.use('/medicoes', rotaMedicoes)
 
 app.listen(PORT, (res,req) => {
     console.log(`Servidor WEB conectado na porta:${PORT}`)

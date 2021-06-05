@@ -1,6 +1,7 @@
 //Teste de Requisicoes REST - Medicoes
 
 @baseURL = http://localhost:4000
+@id = 60b8231b5f85b601db8c2f7c
 
 ###
 //GET - Lista todas as medicoes
@@ -15,7 +16,24 @@ Content-Type: application/json
 {
     "medidas.medidaX":"90",
     "medidas.medidaY":"0",
-    "dataMedicao":"26/05/2021",
+    "dataMedicao":"2021/06/02",
     "nomeCliente":"Zezinho",
     "localMedida":"Quina do Quarto 3"
+}
+
+###
+// DELETE - Apaga uma medicao atraves do id informado
+DELETE {{baseURL}}/medicoes/{{id}}
+Content-Type: application/json
+###
+//PUT - Alterar um registro
+PUT {{baseURL}}/medicoes
+Content-Type: application/json
+
+{
+    "_id":"60b8231b5f85b601db8c2f7c",
+    "medidas.medidaX":"45",
+    "medidas.medidaY":"30",
+    "nomeCliente":"Kleber da Silva",
+    "localMedida":"Terreno do Valter"
 }
