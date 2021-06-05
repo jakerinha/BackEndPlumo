@@ -22,6 +22,18 @@ app.get('/', (req, res) => {
     })
 })
 
+app.use(function(req, res, next){
+    //Em produção, remova o * e atualize com o domínio/ip do seu app
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    //Cabeçalhos que serão permitidos
+    res.setHeader('Access-Control-Allow-Headers','*')
+    //Ex: res.setHeader('Access-Control-Allow-Headers','Content-Type, Accept, access-token'  
+    //Métodos que serão permitidos
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, PATCH') 
+    next()
+   })
+
+
 //Rota para mediçoes
 
 app.use('/medicoes', rotaMedicoes)
