@@ -1,7 +1,7 @@
 //Teste de Requisicoes REST - Medicoes
 
 @baseURL = http://localhost:4000
-@id = 60b8231b5f85b601db8c2f7c
+@id = 60b823af5f85b601db8c2f7d
 
 ###
 //GET - Lista todas as medicoes
@@ -14,11 +14,11 @@ POST {{baseURL}}/medicoes
 Content-Type: application/json
 
 {
-    "medidas.medidaX":"90",
+    "medidas.medidaX":"50",
     "medidas.medidaY":"0",
     "dataMedicao":"2021/06/02",
-    "nomeCliente":"Zezinho",
-    "localMedida":"Quina do Quarto 3"
+    "nomeCliente":"Juquinha",
+    "localMedida":"Quarto 4"
 }
 
 ###
@@ -31,7 +31,7 @@ PUT {{baseURL}}/medicoes
 Content-Type: application/json
 
 {
-    "_id":"60b8231b5f85b601db8c2f7c",
+    "_id":"60b823af5f85b601db8c2f7d",
     "medidas.medidaX":"45",
     "medidas.medidaY":"30",
     "nomeCliente":"Kleber da Silva",
