@@ -1,5 +1,3 @@
 /node_modules
-/*.env
+.env
 *.mongodb
-npm-debug.log
-.DS_Store

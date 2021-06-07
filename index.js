@@ -10,6 +10,8 @@ InicializaMongoServer()
 //Inicializamos o nosso app a partir da biblioteca express
 const app = express()
 
+app.disable('x-powered-by')
+
 //Definindo a porta DEFAULT
 const PORT = process.env.PORT //PORTA 4000
 
@@ -37,6 +39,12 @@ app.use(function(req, res, next){
 //Rota para mediçoes
 
 app.use('/medicoes', rotaMedicoes)
+
+app.use(function(req, res){
+    res.status(404).json({
+        mensagem: `A rota ${req.originalUrl} não existe!`
+    })
+})
 
 app.listen(PORT, (res,req) => {
     console.log(`Servidor WEB conectado na porta:${PORT}`)
